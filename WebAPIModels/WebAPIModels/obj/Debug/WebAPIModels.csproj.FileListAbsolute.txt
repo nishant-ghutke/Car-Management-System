@@ -1,0 +1,6 @@
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\bin\Debug\WebAPIModels.dll
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\bin\Debug\WebAPIModels.pdb
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\obj\Debug\WebAPIModels.csproj.AssemblyReference.cache
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\obj\Debug\WebAPIModels.csproj.CoreCompileInputs.cache
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\obj\Debug\WebAPIModels.dll
+D:\TrainingAssignment2024\Phase_02\WebAPIModels\WebAPIModels\obj\Debug\WebAPIModels.pdb

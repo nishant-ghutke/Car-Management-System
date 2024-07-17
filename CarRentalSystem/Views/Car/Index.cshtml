@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CarRentalSystem.Model.CarModel>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Customer = Html.ActionLink("Customer Details", "Index", "User", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white; display: inline-block;  margin-right: 10px; " });
+    ViewBag.Car = Html.ActionLink("Car Details", "Index", "Car", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white;display: inline-block;  margin-right: 20px; " });
+    ViewBag.Rent = Html.ActionLink("Rent car", "InsertUser", "User", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white;display: inline-block;  margin-right: 20px; " });
+
+
+}
+
+<h2>Registered Car</h2>
+
+<style>
+    body {
+        background-image: url('../../content/images/blue-car-speed-motion-stretch-style.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    table {
+        color: white; /* Set font color to white for the entire table */
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+        color: white; /* Set font color to white for all data inside table cells */
+    }
+
+        td.actions a {
+            color: white; /* Set font color to white for email column and links */
+        }
+
+       
+</style>
+<p>
+    @Html.ActionLink("Register", "InsertCar")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CarName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarMileage)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+
+        <th></th>
+    </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarMileage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+
+              
+                <td>
+                    @Html.ActionLink("Edit", "UpdateCar", new { id = item.CarId }, new { style = "color:white;" }) |
+                    @Html.ActionLink("Details", "Detail", new { id = item.CarId }, new { style = "color:white;" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CarId }, new { style = "color:white;" }) |
+
+                </td>
+            </tr>
+}
+
+</table>

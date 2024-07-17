@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarRentalModelStoreContainer" CdmEntityContainer="CarRentalEntities">
+    <EntitySetMapping Name="tbl_CarRegistration">
+      <EntityTypeMapping TypeName="CarRentalModel.tbl_CarRegistration">
+        <MappingFragment StoreEntitySet="tbl_CarRegistration">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarName" ColumnName="CarName" />
+          <ScalarProperty Name="CarMileage" ColumnName="CarMileage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UserRegistration">
+      <EntityTypeMapping TypeName="CarRentalModel.tbl_UserRegistration">
+        <MappingFragment StoreEntitySet="tbl_UserRegistration">
+          <ScalarProperty Name="CarRented" ColumnName="CarRented" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Countries">
+      <EntityTypeMapping TypeName="CarRentalModel.tbl_Countries">
+        <MappingFragment StoreEntitySet="tbl_Countries">
+          <ScalarProperty Name="Countries" ColumnName="Countries" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_States">
+      <EntityTypeMapping TypeName="CarRentalModel.tbl_States">
+        <MappingFragment StoreEntitySet="tbl_States">
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_select" FunctionName="CarRentalModel.Store.sp_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarRentalModel.sp_select_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_update" FunctionName="CarRentalModel.Store.sp_update" />
+    <EntitySetMapping Name="tbl_Login">
+      <EntityTypeMapping TypeName="CarRentalModel.tbl_Login">
+        <MappingFragment StoreEntitySet="tbl_Login">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_carupdate" FunctionName="CarRentalModel.Store.sp_carupdate" />
+    <FunctionImportMapping FunctionImportName="QuantityCheck" FunctionName="CarRentalModel.Store.QuantityCheck" />
+  </EntityContainerMapping>
+</Mapping>

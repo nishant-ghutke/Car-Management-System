@@ -1,0 +1,68 @@
+﻿///
+
+@model IEnumerable<CarRentalSystem.Model.UserModel>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Customer = Html.ActionLink("Customer Details", "Index", "User", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white; display: inline-block;  margin-right: 10px; " });
+    ViewBag.Car = Html.ActionLink("Car Details", "Index", "Car", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white;display: inline-block;  margin-right: 20px; " });
+    ViewBag.Rent = Html.ActionLink("Rent car", "InsertUser", "User", new { area = "" }, new { @class = "nav-link", style = "font-size:18px; color: white;display: inline-block;  margin-right: 20px; " });
+}
+
+<h2>Registered User</h2>
+
+<style>
+    body {
+        background-image: url('../../content/images/blue-car-speed-motion-stretch-style.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    table {
+        color: white; /* Set font color to white for the entire table */
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+        color: white; /* Set font color to white for all data inside table cells */
+    }
+
+         td.actions a {
+            color: white; /* Set font color to white for email column and links */
+        }
+        td.email {
+            color: white; /* Set font color to white for email column */
+        }
+</style>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.firstName)</th>
+        <th>@Html.DisplayNameFor(model => model.lastName)</th>
+        <th>Email</th>
+        <th>@Html.DisplayNameFor(model => model.Country)</th>
+        <th>@Html.DisplayNameFor(model => model.State)</th>
+        <th>@Html.DisplayNameFor(model => model.CarRented)</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.firstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.lastName)</td>
+            <td class="email">@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>@Html.DisplayFor(modelItem => item.Country)</td>
+            <td>@Html.DisplayFor(modelItem => item.State)</td>
+            <td>@Html.DisplayFor(modelItem => item.CarRented)</td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateUser", new { id = item.UserId }, new { style = "color:white;" }) |
+                @Html.ActionLink("Details", "Detail", new { id = item.UserId }, new { style = "color:white;" }) |
+                @Html.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new { style = "color:white;" })
+            </td>
+        </tr>
+    }
+</table>

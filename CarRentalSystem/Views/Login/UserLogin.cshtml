@@ -1,0 +1,124 @@
+﻿@model CarRentalSystem.Model.LoginModel
+
+@{
+    ViewBag.Title = "UserLogin";
+}
+
+<style>
+    body {
+        background-color: #C8F2FC; /* Set background color outside the container */
+    }
+
+    /* Custom styles for login form */
+    .login-container {
+        width: 450px; /* Increased container width */
+        margin: 50px auto; /* Center the login container vertically */
+        background-color: #00A7C3; /* Updated container background color */
+        border: 1px solid #ccc;
+        padding: 30px; /* Increased padding */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex; /* Use flexbox to center contents */
+        flex-direction: column; /* Stack contents vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+        .login-container h2 {
+            text-align: center;
+            color: #fff; /* White text color */
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+        width: 100%; /* Make form groups full width */
+    }
+
+    .form-control {
+        background-color: #e9ecef; /* Light input field background color */
+        border: 1px solid #ced4da; /* Border color */
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px; /* Increase font size */
+        height: 40px; /* Set input field height */
+    }
+
+    .form-control-label {
+        color: #fff; /* Set label text color */
+        font-size: 18px; /* Increase label font size */
+        text-align: center; /* Center label text */
+    }
+
+    .form-control-label-centered {
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn-login {
+        background-color: #007bff; /* Primary button color */
+        color: #fff; /* Button text color */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .btn-login:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+    .text-danger {
+        color: red; /* Error message text color */
+    }
+
+    .link-back {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .link-back a {
+            color: #007bff; /* Link color */
+        }
+
+            .link-back a:hover {
+                text-decoration: none; /* Remove underline on hover */
+                color: #0056b3; /* Darker shade on hover */
+            }
+</style>
+
+<div>
+    <h2 style="text-align: center; color: #00A7C3; margin-bottom: 20px;"><br /> Login</h2> <!-- Adjusted the text color -->
+</div>
+
+<div class="login-container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "form-control-label form-control-label-centered" })
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-control-label form-control-label-centered" })
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-login" />
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    }
+</div>
+
+
+
+
+@*<div class="link-back">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-link" })
+    </div>*@

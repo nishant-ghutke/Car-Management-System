@@ -1,0 +1,6 @@
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\bin\Debug\CarRentalSystem.Model.dll
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\bin\Debug\CarRentalSystem.Model.pdb
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\obj\Debug\CarRentalSystem.Model.csproj.AssemblyReference.cache
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\obj\Debug\CarRentalSystem.Model.csproj.CoreCompileInputs.cache
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\obj\Debug\CarRentalSystem.Model.dll
+D:\TrainingAssignment2024\Phase_02\CarRentalSystem.Model\obj\Debug\CarRentalSystem.Model.pdb

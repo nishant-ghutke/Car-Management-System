@@ -1,0 +1,88 @@
+﻿@model CarRentalSystem.Model.CarModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<style>
+    body {
+        background-image: url('../../content/images/blue-car-speed-motion-stretch-style.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+
+    .detail-container {
+        background-color: #87CEEB; /* Sky blue color */
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center all text within the container */
+    }
+
+    .detail-item {
+        margin-bottom: 20px;
+        text-align: left; /* Align detail items to the left */
+    }
+
+    .detail-label {
+        font-weight: bold;
+    }
+
+    .detail-box {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px; /* Add margin between details and buttons */
+    }
+
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 10px;
+    }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+</style>
+
+<h2>Car Details</h2>
+
+<div class="detail-container">
+    <div class="detail-item">
+        <div class="detail-label">Car Name</div>
+        <div class="detail-box">@Html.DisplayFor(model => model.CarName)</div>
+    </div>
+
+    <div class="detail-item">
+        <div class="detail-label">Car Mileage</div>
+        <div class="detail-box">@Html.DisplayFor(model => model.CarMileage)</div>
+    </div>
+
+    <div class="detail-item">
+        <div class="detail-label">Available</div>
+        <div class="detail-box">@Html.DisplayFor(model => model.Quantity)</div>
+    </div>
+
+    <div class="button-container">
+       
+        @Html.ActionLink("Back to List", "Index", new { @class = "button" })
+    </div>
+</div>
